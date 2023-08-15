@@ -5,7 +5,7 @@ other_server="server1"
 other_server_ip="192.168.60.10"
 
 function update_hosts_and_ssh_config {
-  # Got to do it again as it weren't propagated from exercise4-fix for some reason
+  # Got to do it again as it weren't propagated from exercise4-fix as ordered at Vagrantfile
   echo "$other_server_ip $other_server" | sudo tee -a /etc/hosts
   sudo sed -i 's/^PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
   # Disable strict host key checking as required
